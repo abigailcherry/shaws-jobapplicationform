@@ -1,0 +1,363 @@
+@import 'bootstrap/mixins';
+@import 'bootstrap/variables';
+
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot?srf3rx');
+	src:url('../fonts/icomoon/icomoon.eot?srf3rx#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.ttf?srf3rx') format('truetype'),
+		url('../fonts/icomoon/icomoon.woff?srf3rx') format('woff'),
+		url('../fonts/icomoon/icomoon.svg?srf3rx#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin icomoon() {
+	
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+}
+
+
+
+$font-primary: 'Raleway', Arial, sans-serif;
+
+$black: rgb(0, 0, 0);
+$dkblue: rgb(39, 99, 116);
+$ltblue: rgb(53, 168, 185);
+
+$white-two: rgb(225, 225, 225);
+$white: rgb(255, 255, 255);
+$dkgray: rgb(56, 56, 56);
+$warm-grey: rgb(129, 128, 128);
+
+$ltgray: rgb(216, 216, 216);
+
+
+
+
+$font-primary: 'BebasNeue', Arial, sans-serif;
+$font-secondary: 'Montserrat', Arial, sans-serif;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+body {
+	font-family: $font-secondary;
+	line-height: 22px;
+	font-weight: 300;
+	color: $black;
+	height: 100%;
+	position: relative;
+}
+
+a {
+	color: $dkgray;
+	@include transition(.5s);
+	&:hover, &:active, &:focus {
+		color: $ltgray;
+		outline: none;
+		text-decoration: none;
+	}
+}
+p, figure {
+	margin-bottom: 2em;
+	
+}
+
+form {
+	float: left;
+	clear: after;
+	background-color: $white;
+
+
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $black;
+	font-family: $font-primary;
+	font-weight: 200;
+	margin: 50px 0 10px 0;
+	text-transform: uppercase;
+}
+::-webkit-selection {
+  color: $black;
+  background: $ltgray;
+}
+
+::-moz-selection {
+  color: $black;
+  background: $ltgray;
+}
+
+::selection {
+  color: $black;
+  background: $ltgray;
+}
+
+// Buttons
+
+.btn {
+	width: 150px;
+	border: none;
+	background: $ltgray;
+	color: $black;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	&:hover, &:focus, &:active {
+		background: lighten($black, 5%)!important;
+	}
+	@include border-radius(4px);
+	@include transition(.5s);
+	&:hover, &:active, &:focus {
+		box-shadow: none!important;
+		outline: none!important;
+	}
+	
+	.btn-text {
+		font-family: $font-primary;
+		font-size: 16px;
+		font-weight: 400;
+		text-align: center;
+		vertical-align: middle;
+		
+	}
+}
+
+
+
+
+.jumbotron {
+	background-color: $black;
+	margin-top: -10px;
+
+	background-image: url('../images/50s-texture-bg.png');
+	background-size: cover;
+	background-position: left;
+	background-repeat: no-repeat;
+	position: relative;
+	height: 400px;
+
+	@media screen and (max-width: $screen-xs) {
+		height: 450px;
+		position: center;
+	}
+	
+}
+
+
+
+
+.navbar {
+	background: transparent !important; 
+	z-index: 999;
+	border: none !important;
+	color: $ltgray;
+	text-transform: uppercase;
+	margin-top: 12px;
+	li {
+		display: inline;
+		font: $font-primary;
+		font-size: 16px;
+		text-align: right;
+	}
+	a {
+		color: $white !important;
+		font-family: $font-primary;
+		text-align: right;
+		letter-spacing: 2px;
+		font-weight: 300;
+
+	}
+ 
+}
+.navbar-brand {
+	margin-left: 15px!important;
+	margin-top: -30px!important;
+	height: 100px;
+	
+	ul {
+	padding: 0;
+	margin: 0;
+	z-index: 2;
+	position: relative;
+	@media screen and (max-width: $screen-sm) {
+		display: none;
+		}
+	}
+}
+
+.hero-text-rt {
+	position: relative;
+	z-index: 50;
+	text-align: right;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	vertical-align: middle;
+	
+
+	h1 {
+		font-family: $font-primary;
+		font-size: 40px;
+		font-weight: light;
+		text-align: right;
+		color: $white;
+		letter-spacing: 5px;
+	}
+	p {
+		font-size: 16px;
+		color: $ltgray;
+		text-align: right !important;
+		line-height: 1.5em;
+
+	}
+	@media screen and (max-width: $screen-xs) {
+		display: none;	}
+
+}
+
+
+.shaws-logo {
+	text-align: left;
+	display: block;
+	background: transparent;
+	z-index: 1;
+		a {
+			font-size: 30px;
+			font-weight: 500;
+			color: rgba(255,255,255,1);
+			span {
+				color: $black;
+			}
+		}
+		@media screen and (max-width: $screen-xs) {
+		height: 300px;
+
+	}
+}
+
+
+
+
+.alert { display: none; }
+            form, .alert { width: 60%; margin: 0 auto; }
+            .checkbox h3 { margin: 0; font-size: 1em; font-weight: 700; }
+
+/* .footer-icons {
+
+li {
+	a {
+		
+	}
+}
+} */
+
+#shaws-footer {
+	margin-top: 55px;
+	padding-bottom: 0;
+	background-color: $black;
+	padding-top: 50px;
+	color: $ltgray;
+	font-family: 'Montserrat', sans-serif;
+
+	a {
+		color: $white;
+		font-family: 'Montserrat', sans-serif;
+		margin: 10px 0;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+
+	
+
+	.shaws-footer-widget {
+		@media screen and (max-width: $screen-md) {
+			margin-bottom: 30px;
+			width: 100%;
+		}
+
+		h3 {
+			font-size: 18px;
+			font-weight: 200;
+			color: $ltgray;
+			letter-spacing: 1px;
+		}
+		 .shaws-links {
+			padding: 0;
+			margin: 0;
+			li {
+				list-style: none;
+				
+
+				a { margin-left: 10px;
+					color: darken($ltgray, 10%);
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		
+
+	}
+ 	.shaws-copyright {
+ 		margin-top: 25px;
+		border-top: 1px solid lighten($ltgray, 38%);
+		padding: 40px 0;
+		a {
+			font-weight: 700;
+		}
+		p {
+			small {
+				font-size: 15px;
+			}
+		}
+		.pull-left {
+			float: left;
+		}
+		.pull-right {
+			float: right;
+			@media screen and (max-width: $screen-sm) {
+				float: left;
+			}
+		}
+	}
+}
+
+.shaws-social {
+	padding: 0;
+	margin: 0;
+	li {
+		padding: 0;
+		margin: 0;
+		display: inline;
+		a {
+			padding: 4px 7px;
+			font-size: 22px;
+			&:hover {
+				text-decoration: none!important;
+				color: $ltgray!important;
+			}
+		}
+	}
+}
+
